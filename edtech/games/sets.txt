@@ -1,0 +1,43 @@
+Spanish
+def flashcards(request):
+    words = [
+        (("Holla"),("Hello")),
+        (("Adios"),("Goodbye")),
+        (("Buenos Dias"),("Good Morning")),
+        (("Buenas Tardes"),("Good Afternoon")),
+        (("Buenas Noches"),("Good Night")),
+        (("Como Estas"),("How are you")),
+        (("Estoy Bien"),("I am fine")),
+        (("Estoy Mal"),("I am not fine")),
+        (("Hasta Luego"),("See you later")),
+        (("Hasta Manana"),("See you tomorrow")),
+        (("Hasta Pronto"),("See you soon")),
+        (("Hasta La Vista"),("See you later")),
+        (("Hasta Nunca"),("See you never")),
+        (("Hasta Ahora"),("See you now")),
+        (("Hasta Entonces"),("See you then")),
+        (("Hasta Siempre"),("See you always")),
+    ]
+
+
+5th Grade:
+
+
+const words = [
+  ["Samantha has 4 apples and she gives 2 to her friend. How many apples does she have now?", "2"],
+  ["A rectangle has a length of 10 cm and a width of 5 cm. What is the area of the rectangle?", "50"],
+  ["The perimeter of a square is 16 cm. What is the length of each side of the square?", "4"],
+  ["Julia has 6 marbles and she wants to split them equally among her 2 friends. How many marbles will each friend get?", "3"],
+  ["A store has a sale for 25% off all items. If a shirt originally costs $20, how much will it cost during the sale?", "15"],
+  ["A pizza has a diameter of 12 inches. What is the circumference of the pizza to the nearest whole number?", "38"],
+  ["The average of 3, 5, and 7 is 5. True or False?", "True"],
+  ["A box contains 24 pencils. If each pencil costs $0.50, how much money is needed to buy all the pencils?", "12"],
+  ["A triangle has a base of 6 cm and a height of 4 cm. What is the area of the triangle?", "12"],
+  ["A train travels at a speed of 50 miles per hour. How far will it travel in 3 hours?", "150"],
+  ["A recipe calls for 2/3 cup of sugar. If you want to make half of the recipe, how much sugar will you need?", "1/3"],
+  ["The value of x in the equation 3x + 5 = 14 is 3. True or False?", "False"],
+  ["If a bag contains 10 red marbles and 8 blue marbles, what is the probability of selecting a red marble?", "5/9"],
+  ["A cube has a volume of 27 cubic meters. What is the length of each side of the cube?", "3"],
+  ["The sum of angles in a triangle is 180 degrees. True or False?", "True"],
+  ["A car travels at a speed of 60 miles per hour. How long will it take to travel 120 miles?", "2"]
+];

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Elementary Math Website</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .header {
+      background-color: #7db9e8;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .header a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    .container {
+      margin: 50px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0px 0px 10px #888888;
+    }
+
+    .container h2 {
+      font-size: 24px;
+      margin: 0 0 20px;
+    }
+
+    .container p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 0 0 10px;
+    }
+
+    .btn {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 0;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background-color: #9717ce;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Elementary Math Website</h1>
+    <a href="#">Login</a>
+  </div>
+
+  <div class="container">
+    <h2>Welcome to our website!</h2>
+    <p>Learn math with fun games, interactive quizzes, and engaging activities designed for elementary school students. Our website is the perfect way to supplement your child's education and help them excel in math.</p>
+    <a href="{% url 'signup' %}" class="btn">Get Started</a>
+    <a href="{% url 'flashcards' %}" class="btn">Play Flashcards</a>
+  
+  </div>
+</body>
+
+</html>

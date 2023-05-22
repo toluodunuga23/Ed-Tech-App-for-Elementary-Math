@@ -1,0 +1,223 @@
+
+{% block content %}
+
+<!-- HTML code for flashcards program -->
+<div id="flashcards">
+    <h1>Flashcards</h1>
+
+
+    <style>
+        /* CSS code for flashcards program */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5D0C5;
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+    margin: 40px 0;
+    color: #FF6B6B;
+}
+
+#flashcards {
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 800px;
+}
+
+#definition {
+    text-align: center;
+    font-size: 72px;
+    margin: 40px 0;
+    color: #FF6B6B;
+    text-shadow: 2px 2px #FCEBB6;
+}
+
+#answer-label {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #333;
+}
+
+#my-entry {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+}
+
+#button-frame {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #FF6B6B;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #FF9B9B;
+}
+
+#hint-label {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #555;
+    font-style: italic;
+}
+
+::-webkit-input-placeholder {
+    /* Safari, Chrome, Firefox */
+    color: #999;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #999;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #999;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #999;
+}
+
+
+
+    </style>
+
+
+
+
+
+    <div id="definition"></div>
+    <div id="answer-label"></div>
+    <input id="my-entry" type="text" placeholder="Enter your answer here" autofocus>
+    <div id="button-frame">
+        <button id="answer-button">Answer</button>
+        <button id="next-button">Next Word</button>
+        <button id="hint-button">Hint</button>
+    </div>
+    <div id="hint-label"></div>
+</div>
+
+<!-- JavaScript code for flashcards program -->
+<script>
+    // Define list of words
+  // Define list of words
+  const words = [  ["If a farmer has 10 cows and sells 3 of them, how many cows does he have left?", "7"],
+  ["Which number is greater: 387 or 738?", "738"],
+  ["What time will it be in 2 hours if the clock shows 4 o'clock?", "6"],
+  ["What is the perimeter of a rectangle with a length of 8 cm and a width of 5 cm?", "26"],
+  ["What is the difference between 245 and 139?", "106"],
+  ["What is the place value of the digit 6 in the number 6,874?", "Thousands"],
+  ["What is the product of 7 and 9?", "63"],
+  ["If you have 3 dimes and 4 nickels, how many cents do you have?", "55"],
+  ["What is the value of the digit 8 in the number 1,284?", "Hundreds"],
+  ["What is the missing number in the sequence: 12, 15, 18, __, 24?", "21"],
+  ["Which shape has 5 sides?", "Pentagon"],
+  ["What time will it be in 5 hours if the clock shows 11 o'clock?", "4"],
+  ["Which number is divisible by 3: 25, 36, or 47?", "36"],
+  ["What is the place value of the digit 9 in the number 9,345?", "Thousands"],
+  ["What is the missing number in the sequence: 3, 6, 9, __, 15?", "12"],
+  ["What is the area of a triangle with a base of 7 cm and a height of 4 cm?", "14"]
+];
+
+
+let count = words.length;
+let randomWord;
+
+// Get HTML elements
+const spanishWord = document.querySelector('#definition');
+const answerLabel = document.querySelector('#answer-label');
+const myEntry = document.querySelector('#my-entry');
+const answerButton = document.querySelector('#answer-button');
+const nextButton = document.querySelector('#next-button');
+const hintButton = document.querySelector('#hint-button');
+const hintLabel = document.querySelector('#hint-label');
+
+// Define function to clear screen
+function clearScreen() {
+  answerLabel.textContent = "";
+  myEntry.value = "";
+  myEntry.focus();
+}
+
+// Define function to generate random word
+function generateRandomWord() {
+  randomWord = Math.floor(Math.random() * count);
+  spanishWord.textContent = words[randomWord][0];
+}
+
+// Define function to check answer
+function checkAnswer() {
+  if (myEntry.value.toLowerCase() === words[randomWord][1].toLowerCase()) {
+    answerLabel.textContent = `Correct!!,  ${words[randomWord][0]} is ${words[randomWord][1]}`;
+  } else {
+    answerLabel.textContent = `Incorrect!! ${words[randomWord][0]} is not ${myEntry.value}`;
+  }
+}
+
+
+    // Define function to show hint
+    function showHint() {
+        hintLabel.textContent = `Hint: ${words[randomWord][1][0]}`;
+    }
+
+    // Generate random word when page loads
+    generateRandomWord();
+
+    // Add event listeners to
+// Answer button
+answerButton.addEventListener('click', function() {
+checkAnswer();
+myEntry.blur(); // Unfocus input field
+});
+
+
+// Next button
+nextButton.addEventListener('click', function() {
+    clearScreen();
+    generateRandomWord();
+    hintLabel.textContent = ""; // Clear hint
+});
+
+// Hint button
+hintButton.addEventListener('click', function() {
+    showHint();
+});
+
+// Handle keypress events
+myEntry.addEventListener('keydown', function(event) {
+    if (event.keyCode === 13) { // Enter key
+        checkAnswer();
+        myEntry.blur(); // Unfocus input field
+    } else if (event.keyCode === 27) { // Escape key
+        clearScreen();
+    }
+});
+</script>
+{% endblock %}
